@@ -26,7 +26,7 @@ export class View {
   getFormData(form) {
     const formData = [];
 
-    [...form.elements].map(el => {
+    [...form.elements].forEach(el => {
       if (el.tagName === 'INPUT') {
         el = {
           type: el.type,
@@ -51,7 +51,7 @@ export class View {
   };
 
   disableChildren(element) {
-    element.map(el => {
+    element.forEach(el => {
       const radioChildren = el.parentNode.nextElementSibling;
       const inputs = radioChildren.querySelectorAll('input');
       if (!el.checked) { 
@@ -94,7 +94,7 @@ export class View {
     const form = this.getFormRoot();
     const parentElement = form.querySelectorAll('[type="radio"]');
 
-    [...data].map((input, index) => {
+    [...data].forEach((input, index) => {
       const elements = [...form.querySelectorAll('input')];
       const tagName = elements[index].tagName;
       const element = elements[index];
