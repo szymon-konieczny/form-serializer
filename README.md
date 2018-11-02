@@ -1,3 +1,3 @@
-#THE HANGMAN GAME
+#FORM SERIALIZER
 
-Please run 'yarn start' to start the game.
+Please run by 'yarn start'.
