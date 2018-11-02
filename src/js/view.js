@@ -92,6 +92,7 @@ export class View {
 
   setFormState(data) {
     const form = this.getFormRoot();
+    const parentElement = form.querySelectorAll('[type="radio"]');
 
     [...data].map((input, index) => {
       const elements = [...form.querySelectorAll('input')];
@@ -99,6 +100,7 @@ export class View {
       const element = elements[index];
       if(tagName === 'INPUT') {
         element.checked = input.checked;
+        this.disableChildren([...parentElement]);
       };
     });
   };
